@@ -10,7 +10,7 @@ public class Main {
         try
         {
             int BUFFER = 4096;
-            System.out.println("starting a chat with two overly chatty clients");
+            System.out.println("***** Starting a conversation with two overly chatty clients\n\n");
  
             //Client A Connections
             PipedInputStream clientAInput = new PipedInputStream(BUFFER);
@@ -26,10 +26,10 @@ public class Main {
             PipedOutputStream serverClientBOutput = new PipedOutputStream(serverClientBInput);
             
             
-            //System.out.println("Streams opened");
-            //System.out.println("Creating client->ClientA");
             ClientA clientA = new ClientA(clientAOutput);
             ClientB clientB = new ClientB(serverClientAInput);
+            //ClientA clientA = new ClientA(serverClientBInput,clientAOutput);
+            //ClientB clientB = new ClientB(serverClientAInput,clientBOutput);
             Server server = new Server(clientAInput,serverClientAOutput,clientBInput,serverClientBOutput);
             
             
@@ -37,21 +37,13 @@ public class Main {
             Thread serverThread = new Thread(server);
             Thread clientBThread = new Thread(clientB);
  
-
-            //System.out.println("Starting Thread->ClientA");
-            //Thread.sleep(3000);
-            clientAThread.start();
-            
-            //System.out.println("Starting Thread->Server");
-            //Thread.sleep(3000);
             serverThread.start();
-            
-            //System.out.println("Starting Thread->ClientB");
+            clientAThread.start();
             clientBThread.start();
-            //Thread.sleep(3000);
+
             
             serverThread.join();
-            System.out.println("Overly chatty conversation has stopped");
+            System.out.println("\n\n***** Overly chatty conversation has stopped");
         }
         catch (Exception e)
         {

@@ -14,8 +14,10 @@ public class ClientB implements Runnable
     private OutputStream outputStream = null;
     private String [] words = {"Blah!","Oh no","Meh","Glah","How's it going, eh","Say hello"}; 
     
+    //public ClientB(InputStream inputStream,OutputStream outputStream)
     public ClientB(InputStream inputStream)
     {
+        //this.outputStream = outputStream;
         this.inputStream = inputStream;
     }
  
@@ -28,7 +30,7 @@ public class ClientB implements Runnable
             for (int i=0;i< Server.SERVER_MAX_MESSAGES;i++)
             {
             	readMessage();
-            	//Thread.yield();
+            	//sendRandomMessage();
             }
         	//System.out.println("ClientB -> Message(s) Read");
         	
@@ -54,7 +56,7 @@ public class ClientB implements Runnable
     private void sendRandomMessage()
     {
     	int random = (int)(Math.random()*10) % 20;
-    	if (random %2 ==0)
+    	if (random %3 ==1)
     		return;
     	
     	//System.out.println("Random=" + random);
@@ -85,8 +87,8 @@ public class ClientB implements Runnable
 			String info = reader.readLine();
 			if (info != null)
 			{
-				System.out.print("ClientB -> " + info);
-				System.out.println("\nClientB -> ***** ");
+				System.out.println("\t\t\t\t\tClientB -> " + info);
+				//System.out.println("\nClientB -> ***** ");
 			}
             //while ((info = inputStream.read()) != -1)
             //{

@@ -45,7 +45,7 @@ public class Server implements Runnable
         {
         	int infoClientA;
         	int infoClientB;
-        	System.out.println("Server start send");
+        	//System.out.println("Server start send");
             while ((infoClientA = inputStreamClientA.read()) != -1)
             {
             	
@@ -53,26 +53,6 @@ public class Server implements Runnable
             	//System.out.print((char)info);
             	//System.out.println("Server sending="+(char)info);
             }
-            //Thread.sleep(2000);
-        	//Thread.yield();
-        	//System.out.println("Server end send");
-        	//while (bufferedReader.readLine() )
-            //{
-            //    int next = reader.next();
-            //    switch (next)
-            //    {
-	        //        case XMLStreamConstants.CHARACTERS:
-	        //        {
-	        //            String text = reader.getText();
-	        //            if(text.equals("crack"))
-	        //            {
-	        //                text = "*****";
-	        //            }
-	        //            outputStream.write(text.getBytes());
-	        //            break;
-	        //        }
-            //    }
-            //}
         }
         catch (Exception e)
         {
