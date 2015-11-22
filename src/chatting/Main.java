@@ -10,13 +10,18 @@ public class Main {
         try
         {
             int BUFFER = 4096;
-            System.out.println("Starting Stream");
+            System.out.println("starting a chat with two overly chatty clients");
+ 
+            //Client A Connections
             PipedInputStream clientAInput = new PipedInputStream(BUFFER);
             PipedOutputStream clientAOutput = new PipedOutputStream(clientAInput);
- 
             PipedInputStream serverClientAInput = new PipedInputStream(BUFFER);
             PipedOutputStream serverClientAOutput = new PipedOutputStream(serverClientAInput);
             
+            
+            //Client B Connections
+            PipedInputStream clientBInput = new PipedInputStream(BUFFER);
+            PipedOutputStream clientBOutput = new PipedOutputStream(clientBInput);
             PipedInputStream serverClientBInput = new PipedInputStream(BUFFER);
             PipedOutputStream serverClientBOutput = new PipedOutputStream(serverClientBInput);
             
@@ -24,15 +29,8 @@ public class Main {
             //System.out.println("Streams opened");
             //System.out.println("Creating client->ClientA");
             ClientA clientA = new ClientA(clientAOutput);
-            
-           
-            //System.out.println("Creating client->ClientB");
             ClientB clientB = new ClientB(serverClientAInput);
- 
-
-            
-            //System.out.println("Creating server->Server");
-            Server server = new Server(clientAInput,serverClientAOutput);
+            Server server = new Server(clientAInput,serverClientAOutput,clientBInput,serverClientBOutput);
             
             
             Thread clientAThread = new Thread(clientA);
@@ -51,6 +49,9 @@ public class Main {
             //System.out.println("Starting Thread->ClientB");
             clientBThread.start();
             //Thread.sleep(3000);
+            
+            serverThread.join();
+            System.out.println("Overly chatty conversation has stopped");
         }
         catch (Exception e)
         {

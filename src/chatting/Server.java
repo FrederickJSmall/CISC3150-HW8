@@ -27,9 +27,9 @@ public class Server implements Runnable
     
     public static final int SERVER_MAX_MESSAGES = 20;
  
-    //public Server(PipedInputStream inputStreamClientA, PipedOutputStream outputStreamClientA
-    //						,PipedInputStream inputStreamClientB, PipedOutputStream outputStreamClientB)
-    public Server(PipedInputStream inputStreamClientA, PipedOutputStream outputStreamClientA)
+    public Server(PipedInputStream inputStreamClientA, PipedOutputStream outputStreamClientA
+    						,PipedInputStream inputStreamClientB, PipedOutputStream outputStreamClientB)
+    //public Server(PipedInputStream inputStreamClientA, PipedOutputStream outputStreamClientA)
     {
         this.inputStreamClientA = inputStreamClientA;
         this.outputStreamClientA = outputStreamClientA;
@@ -85,12 +85,12 @@ public class Server implements Runnable
                 outputStreamClientA.flush();
                 outputStreamClientA.close();
                 
-                //outputStreamClientB.flush();
-                //outputStreamClientB.close();
+                outputStreamClientB.flush();
+                outputStreamClientB.close();
             }
             catch (Exception e)
             {
-                e.printStackTrace();
+                //e.printStackTrace();
             }
         }
     }
