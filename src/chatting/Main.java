@@ -26,15 +26,15 @@ public class Main {
             PipedOutputStream serverClientBOutput = new PipedOutputStream(serverClientBInput);
             
             
-            ClientA clientA = new ClientA(clientAOutput);
-            ClientB clientB = new ClientB(serverClientAInput);
-            //ClientA clientA = new ClientA(serverClientBInput,clientAOutput);
-            //ClientB clientB = new ClientB(serverClientAInput,clientBOutput);
-            Server server = new Server(clientAInput,serverClientAOutput,clientBInput,serverClientBOutput);
+            ClientA clientA = new ClientA(clientAOutput); //working
+            ClientB clientB = new ClientB(serverClientAInput); //working
+            //ClientA clientA = new ClientA(serverClientAInput,clientAOutput); //testing
+            //ClientB clientB = new ClientB(serverClientBInput,clientBOutput); //testing
+            Server server   = new Server(clientAInput,serverClientAOutput,clientBInput,serverClientBOutput);
             
             
             Thread clientAThread = new Thread(clientA);
-            Thread serverThread = new Thread(server);
+            Thread serverThread  = new Thread(server);
             Thread clientBThread = new Thread(clientB);
  
             serverThread.start();

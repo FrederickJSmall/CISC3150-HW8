@@ -18,11 +18,11 @@ public class ClientA implements Runnable
     private InputStream inputStream = null;
     private String [] words = {"Blah!","Oh no","Meh","Glah","How's it going, eh","Say hello"}; 
  
-    //public ClientA(InputStream inputStream,OutputStream outputStream)
-    public ClientA(OutputStream outputStream)
+    public ClientA(InputStream inputStream,OutputStream outputStream)
+    //public ClientA(OutputStream outputStream) //test
     {
         this.outputStream = outputStream;
-        //this.inputStream = inputStream;
+        this.inputStream = inputStream; //test
     }
  
     @Override
@@ -32,8 +32,8 @@ public class ClientA implements Runnable
         {
             for (int i=0;i <Server.SERVER_MAX_MESSAGES;i++)
             {
-            	//readMessage();
-            	sendRandomMessage();
+            	readMessage(); //testing
+            	sendRandomMessage(); //Working
             }
         }
         catch (Exception e)

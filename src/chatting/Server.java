@@ -25,7 +25,7 @@ public class Server implements Runnable
     private PipedInputStream inputStreamClientB;
     private PipedOutputStream outputStreamClientB;
     
-    public static final int SERVER_MAX_MESSAGES = 20;
+    public static final int SERVER_MAX_MESSAGES = 5;
  
     public Server(PipedInputStream inputStreamClientA, PipedOutputStream outputStreamClientA
     						,PipedInputStream inputStreamClientB, PipedOutputStream outputStreamClientB)
@@ -34,8 +34,8 @@ public class Server implements Runnable
         this.inputStreamClientA = inputStreamClientA;
         this.outputStreamClientA = outputStreamClientA;
         
-        //this.inputStreamClientB = inputStreamClientB;
-        //this.outputStreamClientB = outputStreamClientB;
+        this.inputStreamClientB = inputStreamClientB;
+        this.outputStreamClientB = outputStreamClientB;
     }
  
     @Override
@@ -43,15 +43,30 @@ public class Server implements Runnable
     {
         try
         {
-        	int infoClientA;
-        	int infoClientB;
+        	int infoClientA=-1;
+        	int infoClientB=-1;
         	//System.out.println("Server start send");
             while ((infoClientA = inputStreamClientA.read()) != -1)
-            {
+            //{
             	
-            	outputStreamClientA.write(infoClientA);
+            	//outputStreamClientA.write(infoClientA);
             	//System.out.print((char)info);
             	//System.out.println("Server sending="+(char)info);
+            //}
+            //while ((infoClientB = inputStreamClientB.read()) != -1)
+            //{
+            	
+            	//outputStreamClientB.write(infoClientB);
+            	//System.out.print((char)info);
+            	//System.out.println("Server sending="+(char)info);
+            //}            
+            //while (((infoClientA = inputStreamClientA.read()) != -1) || ((infoClientB = inputStreamClientB.read()) != -1))
+            {
+            	//infoClientB = inputStreamClientB.read();
+            	if (infoClientA != -1)
+            		outputStreamClientA.write(infoClientA);
+            	if (infoClientB != -1)
+            		outputStreamClientB.write(infoClientB);
             }
         }
         catch (Exception e)

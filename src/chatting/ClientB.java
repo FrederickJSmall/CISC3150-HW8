@@ -14,11 +14,11 @@ public class ClientB implements Runnable
     private OutputStream outputStream = null;
     private String [] words = {"Blah!","Oh no","Meh","Glah","How's it going, eh","Say hello"}; 
     
-    //public ClientB(InputStream inputStream,OutputStream outputStream)
-    public ClientB(InputStream inputStream)
+    public ClientB(InputStream inputStream,OutputStream outputStream)
+    //public ClientB(InputStream inputStream) // test
     {
-        //this.outputStream = outputStream;
-        this.inputStream = inputStream;
+        this.outputStream = outputStream; //test
+        this.inputStream = inputStream; //working
     }
  
     @Override
@@ -29,8 +29,8 @@ public class ClientB implements Runnable
         	//System.out.println("ClientB -> Reading Message");
             for (int i=0;i< Server.SERVER_MAX_MESSAGES;i++)
             {
-            	readMessage();
-            	//sendRandomMessage();
+            	readMessage(); // Working
+            	sendRandomMessage(); //Testing
             }
         	//System.out.println("ClientB -> Message(s) Read");
         	
