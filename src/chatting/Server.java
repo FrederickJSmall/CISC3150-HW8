@@ -25,7 +25,7 @@ public class Server implements Runnable
     private PipedInputStream inputStreamClientB;
     private PipedOutputStream outputStreamClientB;
     
-    public static final int SERVER_MAX_MESSAGES = 5;
+    public static final int SERVER_MAX_MESSAGES = 10;
  
     public Server(PipedInputStream inputStreamClientA, PipedOutputStream outputStreamClientA
     						,PipedInputStream inputStreamClientB, PipedOutputStream outputStreamClientB)
@@ -43,9 +43,23 @@ public class Server implements Runnable
     {
         try
         {
-        	int infoClientA=-1;
+        	int infoClientA;
         	int infoClientB=-1;
-        	//System.out.println("Server start send");
+        	System.out.println("Reading inputStream B");
+            while ((infoClientB = inputStreamClientB.read()) != -1)
+            {
+            	//infoClientB = inputStreamClientB.read();
+            	try
+            	{
+            		if (infoClientB != -1)
+            			outputStreamClientB.write(infoClientB);
+            	}
+            	catch (Exception ex)
+            	{}
+            	//if (infoClientB != -1)
+            	//	outputStreamClientB.write(infoClientB);
+            }
+        	System.out.println("Reading inputStream A");
             while ((infoClientA = inputStreamClientA.read()) != -1)
             //{
             	
@@ -65,13 +79,15 @@ public class Server implements Runnable
             	//infoClientB = inputStreamClientB.read();
             	if (infoClientA != -1)
             		outputStreamClientA.write(infoClientA);
-            	if (infoClientB != -1)
-            		outputStreamClientB.write(infoClientB);
+            	//if (infoClientB != -1)
+            	//	outputStreamClientB.write(infoClientB);
             }
+            
+
         }
         catch (Exception e)
         {
-            e.printStackTrace();
+            //e.printStackTrace();
         }
         finally
         {

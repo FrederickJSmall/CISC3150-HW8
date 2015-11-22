@@ -5,7 +5,7 @@ import java.io.PipedInputStream;
 import java.io.PipedOutputStream;
 
 public class Main {
-    public static void main(String... args)
+    public static void main(String[] args)
     {
         try
         {
@@ -26,10 +26,10 @@ public class Main {
             PipedOutputStream serverClientBOutput = new PipedOutputStream(serverClientBInput);
             
             
-            ClientA clientA = new ClientA(clientAOutput); //working
-            ClientB clientB = new ClientB(serverClientAInput); //working
-            //ClientA clientA = new ClientA(serverClientAInput,clientAOutput); //testing
-            //ClientB clientB = new ClientB(serverClientBInput,clientBOutput); //testing
+            //ClientA clientA = new ClientA(clientAOutput); //working
+            //ClientB clientB = new ClientB(serverClientAInput); //working
+            ClientA clientA = new ClientA(serverClientBInput,clientAOutput); //testing
+            ClientB clientB = new ClientB(serverClientAInput,clientBOutput); //testing
             Server server   = new Server(clientAInput,serverClientAOutput,clientBInput,serverClientBOutput);
             
             
@@ -37,6 +37,7 @@ public class Main {
             Thread serverThread  = new Thread(server);
             Thread clientBThread = new Thread(clientB);
  
+            System.out.println("Starting Threads");
             serverThread.start();
             clientAThread.start();
             clientBThread.start();

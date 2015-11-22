@@ -32,8 +32,8 @@ public class ClientA implements Runnable
         {
             for (int i=0;i <Server.SERVER_MAX_MESSAGES;i++)
             {
+            	//sendRandomMessage(); //Working
             	readMessage(); //testing
-            	sendRandomMessage(); //Working
             }
         }
         catch (Exception e)
@@ -71,7 +71,8 @@ public class ClientA implements Runnable
     	//String chatMessage = randomWord;
     	try {
 			this.outputStream.write(chatMessage.getBytes());
-			Thread.sleep(3000);
+			Thread.sleep(2000);
+			this.outputStream.write("".getBytes());
 		} catch (IOException | InterruptedException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -80,26 +81,16 @@ public class ClientA implements Runnable
     private void readMessage()
     {
 		try {
-			//System.out.println(this.inputStream.read());
 			BufferedReader reader = new BufferedReader( new InputStreamReader(this.inputStream));
 			
-			//System.out.println("ClientB ->");
-			//int info;
+			System.out.println("ClientA ->Reading Buffer");
 			String info = reader.readLine();
 			if (info != null)
 			{
 				System.out.println("ClientA -> " + info);
-				//System.out.println("\nClientB -> ***** ");
 			}
-            //while ((info = inputStream.read()) != -1)
-            //{
-            	//outputStream.write(info);
-            	//System.out.print((char)info);
-            	//Thread.yield();
-            //}
 
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
     }

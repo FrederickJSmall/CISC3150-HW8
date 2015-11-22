@@ -5,7 +5,6 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.OutputStream;
-//import java.util.Date;
 import java.util.Date;
  
 public class ClientB implements Runnable 
@@ -26,15 +25,11 @@ public class ClientB implements Runnable
     {
         try
         {
-        	//System.out.println("ClientB -> Reading Message");
             for (int i=0;i< Server.SERVER_MAX_MESSAGES;i++)
             {
-            	readMessage(); // Working
             	sendRandomMessage(); //Testing
+            	//readMessage(); // Working
             }
-        	//System.out.println("ClientB -> Message(s) Read");
-        	
-            //System.out.println("Completed writing elements");
         }
         catch (Exception e)
         {
@@ -58,8 +53,7 @@ public class ClientB implements Runnable
     	int random = (int)(Math.random()*10) % 20;
     	if (random %3 ==1)
     		return;
-    	
-    	//System.out.println("Random=" + random);
+  	
     	
     	String message = "At '%s' Client B said: %s\n";
     	int result = (int)(Math.random()*10) % 6;
@@ -67,38 +61,27 @@ public class ClientB implements Runnable
     	String date = (new Date()).toString();
     	
     	String chatMessage = String.format(message, date  ,randomWord);
-    	//String chatMessage = randomWord;
+
     	try {
 			this.outputStream.write(chatMessage.getBytes());
-			Thread.sleep(3000);
+			Thread.sleep(2000);
+			this.outputStream.write("".getBytes());
 		} catch (IOException | InterruptedException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
     }
     private void readMessage()
     {
 		try {
-			//System.out.println(this.inputStream.read());
 			BufferedReader reader = new BufferedReader( new InputStreamReader(this.inputStream));
 			
-			//System.out.println("ClientB ->");
-			//int info;
+			System.out.println("ClientB ->Reading Buffer");
 			String info = reader.readLine();
 			if (info != null)
 			{
 				System.out.println("\t\t\t\t\tClientB -> " + info);
-				//System.out.println("\nClientB -> ***** ");
 			}
-            //while ((info = inputStream.read()) != -1)
-            //{
-            	//outputStream.write(info);
-            	//System.out.print((char)info);
-            	//Thread.yield();
-            //}
-
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
     }
