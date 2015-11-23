@@ -23,6 +23,32 @@ public class ClientA implements Runnable
     {
         this.outputStream = outputStream;
         this.inputStream = inputStream; //test
+        
+        
+        new Thread(new Runnable() {
+        	@Override
+        	public void run() {
+    		try {
+    			BufferedReader reader = new BufferedReader( new InputStreamReader(inputStream));
+    			
+				//System.out.println("ClientA ->Reading Buffer");
+				String info = reader.readLine();
+				while(info != null)
+				{
+					//System.out.println("ClientA ->yes i was able to read buffer " + info);
+					if (info != null)
+					{
+						System.out.println("ClientA -> " + info);
+					}
+					Thread.yield();
+					info = reader.readLine();
+				}
+    		} catch (IOException e) {
+    			e.printStackTrace();
+    		}
+       	}
+        }).start();
+        
     }
  
     @Override
@@ -32,8 +58,8 @@ public class ClientA implements Runnable
         {
             for (int i=0;i <Server.SERVER_MAX_MESSAGES;i++)
             {
-            	//sendRandomMessage(); //Working
-            	readMessage(); //testing
+            	sendRandomMessage(); //Working
+            	//readMessage(); //testing
             }
         }
         catch (Exception e)
@@ -57,8 +83,8 @@ public class ClientA implements Runnable
     private void sendRandomMessage()
     {
     	int random = (int)(Math.random()*10) % 20;
-    	if (random %2 ==0)
-    		return;
+    	//if (random %2 ==0)
+    	//	return;
     	
     	//System.out.println("Random=" + random);
     	
@@ -71,9 +97,11 @@ public class ClientA implements Runnable
     	//String chatMessage = randomWord;
     	try {
 			this.outputStream.write(chatMessage.getBytes());
-			Thread.sleep(2000);
+			this.outputStream.flush();
+			//Thread.sleep(2000);
+			Thread.yield();
 			this.outputStream.write("".getBytes());
-		} catch (IOException | InterruptedException e) {
+		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
@@ -83,12 +111,18 @@ public class ClientA implements Runnable
 		try {
 			BufferedReader reader = new BufferedReader( new InputStreamReader(this.inputStream));
 			
-			System.out.println("ClientA ->Reading Buffer");
-			String info = reader.readLine();
-			if (info != null)
-			{
-				System.out.println("ClientA -> " + info);
-			}
+			//if (this.inputStream.available() > 0)
+			//{
+				System.out.println("ClientA ->Reading Buffer");
+				String info = reader.readLine();
+				System.out.println("ClientA ->yes i was able to read buffer");
+				if (info != null)
+				{
+					System.out.println("ClientA -> " + info);
+				}
+			//}
+			//else
+			// System.out.println("ClientA -> has nothing to sayReading Buffer");
 
 		} catch (IOException e) {
 			e.printStackTrace();

@@ -44,24 +44,58 @@ public class Server implements Runnable
         try
         {
         	int infoClientA;
-        	int infoClientB=-1;
-        	System.out.println("Reading inputStream B");
-            while ((infoClientB = inputStreamClientB.read()) != -1)
-            {
-            	//infoClientB = inputStreamClientB.read();
-            	try
-            	{
-            		if (infoClientB != -1)
-            			outputStreamClientB.write(infoClientB);
-            	}
-            	catch (Exception ex)
-            	{}
-            	//if (infoClientB != -1)
-            	//	outputStreamClientB.write(infoClientB);
-            }
-        	System.out.println("Reading inputStream A");
-            while ((infoClientA = inputStreamClientA.read()) != -1)
+        	int infoClientB;
+
+        	//System.out.println("Reading inputStream A Available=" + inputStreamClientA.available());
+        	//System.out.println("Reading inputStream B Available=" + inputStreamClientB.available());
+        	//if (inputStreamClientA.available() > 0)
+        	//{
+	            while ((infoClientA = inputStreamClientA.read()) != -1)
+	            {
+	            	//infoClientB = inputStreamClientB.read();
+	            	try
+	            	{
+	            		if (infoClientA != -1)
+	            			outputStreamClientA.write(infoClientA);
+	            	}
+	            	catch (Exception ex)
+	            	{}
+	            	//if (infoClientB != -1)
+	            	//	outputStreamClientB.write(infoClientB);
+	            }
+        	//}
+  
+	        //System.out.println("Reading inputStream B Available=" + inputStreamClientB.available());
+        	//if (inputStreamClientB.available() > 0)
+        	//{
+	            while ((infoClientB = inputStreamClientB.read()) != -1)
+	            {
+	            	//infoClientB = inputStreamClientB.read();
+	            	try
+	            	{
+	            		if (infoClientB != -1)
+	            			outputStreamClientB.write(infoClientB);
+	            	}
+	            	catch (Exception ex)
+	            	{}
+	            	//if (infoClientB != -1)
+	            	//	outputStreamClientB.write(infoClientB);
+	            }
+        	//}
+            
+            //System.out.println("Reading inputStream A");
+            //while ((infoClientA = inputStreamClientA.read()) != -1)
             //{
+            //	//infoClientB = inputStreamClientB.read();
+            //	if (infoClientA != -1)
+            //		outputStreamClientA.write(infoClientA);
+            //	//if (infoClientB != -1)
+            //	//	outputStreamClientB.write(infoClientB);
+            //}
+
+            
+            
+            	//{
             	
             	//outputStreamClientA.write(infoClientA);
             	//System.out.print((char)info);
@@ -75,13 +109,6 @@ public class Server implements Runnable
             	//System.out.println("Server sending="+(char)info);
             //}            
             //while (((infoClientA = inputStreamClientA.read()) != -1) || ((infoClientB = inputStreamClientB.read()) != -1))
-            {
-            	//infoClientB = inputStreamClientB.read();
-            	if (infoClientA != -1)
-            		outputStreamClientA.write(infoClientA);
-            	//if (infoClientB != -1)
-            	//	outputStreamClientB.write(infoClientB);
-            }
             
 
         }

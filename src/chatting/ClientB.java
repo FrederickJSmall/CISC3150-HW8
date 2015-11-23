@@ -18,6 +18,31 @@ public class ClientB implements Runnable
     {
         this.outputStream = outputStream; //test
         this.inputStream = inputStream; //working
+        
+        
+        new Thread(new Runnable() {
+        	@Override
+        	public void run() {
+    		try {
+    			BufferedReader reader = new BufferedReader( new InputStreamReader(inputStream));
+    			
+				//System.out.println("ClientB ->Reading Buffer");
+				String info = reader.readLine();
+				while(info != null)
+				{
+					//System.out.println("ClientB ->yes i was able to read buffer " + info);
+					if (info != null)
+					{
+						System.out.println("\t\tClientB -> " + info);
+					}
+					Thread.yield();
+					info = reader.readLine();
+				}
+    		} catch (IOException e) {
+    			e.printStackTrace();
+    		}
+       	}
+        }).start();
     }
  
     @Override
@@ -39,8 +64,8 @@ public class ClientB implements Runnable
         {
             try
             {
-                //outputStream.flush();
-                //outputStream.close();
+                outputStream.flush();
+                outputStream.close();
             }
             catch (Exception e)
             {
@@ -51,8 +76,8 @@ public class ClientB implements Runnable
     private void sendRandomMessage()
     {
     	int random = (int)(Math.random()*10) % 20;
-    	if (random %3 ==1)
-    		return;
+    	//if (random %3 ==1)
+    	//	return;
   	
     	
     	String message = "At '%s' Client B said: %s\n";
@@ -64,9 +89,11 @@ public class ClientB implements Runnable
 
     	try {
 			this.outputStream.write(chatMessage.getBytes());
-			Thread.sleep(2000);
-			this.outputStream.write("".getBytes());
-		} catch (IOException | InterruptedException e) {
+			this.outputStream.flush();
+			//Thread.sleep(2000);
+			Thread.yield();
+			//this.outputStream.write("".getBytes());
+		} catch (IOException e) {
 			e.printStackTrace();
 		}
     }
@@ -75,8 +102,9 @@ public class ClientB implements Runnable
 		try {
 			BufferedReader reader = new BufferedReader( new InputStreamReader(this.inputStream));
 			
-			System.out.println("ClientB ->Reading Buffer");
+			System.out.println("ClientB ->Reading Buffer ");
 			String info = reader.readLine();
+			System.out.println("ClientB ->yes i was able to read buffer");
 			if (info != null)
 			{
 				System.out.println("\t\t\t\t\tClientB -> " + info);
