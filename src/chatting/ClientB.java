@@ -76,8 +76,8 @@ public class ClientB implements Runnable
     private void sendRandomMessage()
     {
     	int random = (int)(Math.random()*10) % 20;
-    	//if (random %3 ==1)
-    	//	return;
+    	if (random %3 ==1)
+    		return;
   	
     	
     	String message = "At '%s' Client B said: %s\n";
