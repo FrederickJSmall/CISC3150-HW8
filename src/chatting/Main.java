@@ -37,7 +37,7 @@ public class Main {
             Thread serverThread  = new Thread(server);
             Thread clientBThread = new Thread(clientB);
  
-            System.out.println("Starting Conversation");
+            //System.out.println("Starting Conversation");
             clientAThread.start();
             clientBThread.start();
             serverThread.start(); // Works after clientA & B threads
@@ -45,6 +45,7 @@ public class Main {
             clientAThread.join();
             clientBThread.join();
             serverThread.join();
+            Thread.sleep(2000);
             System.out.println("\n\n***** Overly chatty conversation has stopped");
             System.exit(0);
         }

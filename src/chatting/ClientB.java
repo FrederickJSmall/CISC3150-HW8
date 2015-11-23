@@ -33,7 +33,7 @@ public class ClientB implements Runnable
 					//System.out.println("ClientB ->yes i was able to read buffer " + info);
 					if (info != null)
 					{
-						System.out.println("\t\tClientB -> " + info);
+						System.out.println("\t\t\t\t\tClientB -> " + info);
 					}
 					Thread.yield();
 					info = reader.readLine();
