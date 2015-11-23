@@ -16,7 +16,7 @@ public class ClientA implements Runnable
 {
     private OutputStream outputStream = null;
     private InputStream inputStream = null;
-    private String [] words = {"Blah!","Oh no","Meh","Glah","How's it going, eh","Say hello"}; 
+    private String [] words = {"Blah!","Oh no","Meh","Glah","How's it going, eh","Say hello","Hey there","You got it working","Return of the Empire"}; 
  
     public ClientA(InputStream inputStream,OutputStream outputStream)
     //public ClientA(OutputStream outputStream) //test
@@ -89,7 +89,7 @@ public class ClientA implements Runnable
     	//System.out.println("Random=" + random);
     	
     	String message = "At '%s' Client A said: %s\n";
-    	int result = (int)(Math.random()*10) % 6;
+    	int result = (int)(Math.random()*10) % words.length;
     	String randomWord = words[result];
     	String date = (new Date()).toString();
     	

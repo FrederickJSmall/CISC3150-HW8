@@ -25,7 +25,7 @@ public class Server implements Runnable
     private PipedInputStream inputStreamClientB;
     private PipedOutputStream outputStreamClientB;
     
-    public static final int SERVER_MAX_MESSAGES = 10;
+    public static final int SERVER_MAX_MESSAGES = 50;
  
     public Server(PipedInputStream inputStreamClientA, PipedOutputStream outputStreamClientA
     						,PipedInputStream inputStreamClientB, PipedOutputStream outputStreamClientB)
