@@ -1,0 +1,119 @@
+***** Starting a conversation with two overly chatty clients
+
+
+ClientA -> At 'Wed Nov 25 19:24:49 EST 2015' Client B said: No Blah
+							ClientB -> At 'Wed Nov 25 19:24:49 EST 2015' Client A said: Meh
+ClientA -> At 'Wed Nov 25 19:24:49 EST 2015' Client B said: Wehhh
+							ClientB -> At 'Wed Nov 25 19:24:49 EST 2015' Client A said: Oh no
+							ClientB -> At 'Wed Nov 25 19:24:49 EST 2015' Client A said: You got it working
+ClientA -> At 'Wed Nov 25 19:24:49 EST 2015' Client B said: Say hello
+							ClientB -> At 'Wed Nov 25 19:24:49 EST 2015' Client A said: Oh no
+ClientA -> At 'Wed Nov 25 19:24:49 EST 2015' Client B said: Thanos
+							ClientB -> At 'Wed Nov 25 19:24:49 EST 2015' Client A said: Meh
+							ClientB -> At 'Wed Nov 25 19:24:49 EST 2015' Client A said: How's it going, eh
+ClientA -> At 'Wed Nov 25 19:24:49 EST 2015' Client B said: Glah
+							ClientB -> At 'Wed Nov 25 19:24:49 EST 2015' Client A said: Say hello
+ClientA -> At 'Wed Nov 25 19:24:49 EST 2015' Client B said: Blah!
+							ClientB -> At 'Wed Nov 25 19:24:49 EST 2015' Client A said: Meh
+ClientA -> At 'Wed Nov 25 19:24:49 EST 2015' Client B said: No Glah
+							ClientB -> At 'Wed Nov 25 19:24:49 EST 2015' Client A said: How's it going, eh
+ClientA -> At 'Wed Nov 25 19:24:49 EST 2015' Client B said: No Blah
+							ClientB -> At 'Wed Nov 25 19:24:49 EST 2015' Client A said: Oh no
+ClientA -> At 'Wed Nov 25 19:24:49 EST 2015' Client B said: Oh no
+							ClientB -> At 'Wed Nov 25 19:24:49 EST 2015' Client A said: How's it going, eh
+ClientA -> At 'Wed Nov 25 19:24:49 EST 2015' Client B said: Wehhh
+							ClientB -> At 'Wed Nov 25 19:24:49 EST 2015' Client A said: Weh Blah
+ClientA -> At 'Wed Nov 25 19:24:49 EST 2015' Client B said: No Blah
+							ClientB -> At 'Wed Nov 25 19:24:49 EST 2015' Client A said: How's it going, eh
+ClientA -> At 'Wed Nov 25 19:24:49 EST 2015' Client B said: No Blah
+ClientA -> At 'Wed Nov 25 19:24:49 EST 2015' Client B said: Wehhh
+							ClientB -> At 'Wed Nov 25 19:24:49 EST 2015' Client A said: Weh Blah
+ClientA -> At 'Wed Nov 25 19:24:49 EST 2015' Client B said: Blah!
+							ClientB -> At 'Wed Nov 25 19:24:49 EST 2015' Client A said: Blah!
+ClientA -> At 'Wed Nov 25 19:24:49 EST 2015' Client B said: How's it going, eh
+ClientA -> At 'Wed Nov 25 19:24:49 EST 2015' Client B said: Say hello
+							ClientB -> At 'Wed Nov 25 19:24:49 EST 2015' Client A said: Say hello
+ClientA -> At 'Wed Nov 25 19:24:49 EST 2015' Client B said: Thanos
+							ClientB -> At 'Wed Nov 25 19:24:49 EST 2015' Client A said: Zoom Zoom
+ClientA -> At 'Wed Nov 25 19:24:49 EST 2015' Client B said: Thanos
+							ClientB -> At 'Wed Nov 25 19:24:49 EST 2015' Client A said: Zoom Zoom
+ClientA -> At 'Wed Nov 25 19:24:49 EST 2015' Client B said: Wehhh
+							ClientB -> At 'Wed Nov 25 19:24:49 EST 2015' Client A said: You got it working
+ClientA -> At 'Wed Nov 25 19:24:49 EST 2015' Client B said: Say hello
+							ClientB -> At 'Wed Nov 25 19:24:49 EST 2015' Client A said: Zoom Zoom
+ClientA -> At 'Wed Nov 25 19:24:49 EST 2015' Client B said: No Blah
+							ClientB -> At 'Wed Nov 25 19:24:49 EST 2015' Client A said: How's it going, eh
+ClientA -> At 'Wed Nov 25 19:24:49 EST 2015' Client B said: Wehhh
+							ClientB -> At 'Wed Nov 25 19:24:49 EST 2015' Client A said: Blah!
+ClientA -> At 'Wed Nov 25 19:24:49 EST 2015' Client B said: Blah!
+							ClientB -> At 'Wed Nov 25 19:24:49 EST 2015' Client A said: Weh Blah
+ClientA -> At 'Wed Nov 25 19:24:49 EST 2015' Client B said: Glah
+							ClientB -> At 'Wed Nov 25 19:24:49 EST 2015' Client A said: Blah!
+ClientA -> At 'Wed Nov 25 19:24:49 EST 2015' Client B said: No Blah
+							ClientB -> At 'Wed Nov 25 19:24:49 EST 2015' Client A said: You got it working
+							ClientB -> At 'Wed Nov 25 19:24:49 EST 2015' Client A said: How's it going, eh
+ClientA -> At 'Wed Nov 25 19:24:49 EST 2015' Client B said: No Blah
+							ClientB -> At 'Wed Nov 25 19:24:49 EST 2015' Client A said: Oh no
+ClientA -> At 'Wed Nov 25 19:24:49 EST 2015' Client B said: Meh
+							ClientB -> At 'Wed Nov 25 19:24:49 EST 2015' Client A said: You got it working
+ClientA -> At 'Wed Nov 25 19:24:49 EST 2015' Client B said: Glah
+							ClientB -> At 'Wed Nov 25 19:24:49 EST 2015' Client A said: Hey there
+ClientA -> At 'Wed Nov 25 19:24:49 EST 2015' Client B said: No Blah
+							ClientB -> At 'Wed Nov 25 19:24:49 EST 2015' Client A said: Weh Blah
+ClientA -> At 'Wed Nov 25 19:24:49 EST 2015' Client B said: Wehhh
+							ClientB -> At 'Wed Nov 25 19:24:49 EST 2015' Client A said: Oh no
+ClientA -> At 'Wed Nov 25 19:24:49 EST 2015' Client B said: Oh no
+							ClientB -> At 'Wed Nov 25 19:24:49 EST 2015' Client A said: Weh Blah
+ClientA -> At 'Wed Nov 25 19:24:49 EST 2015' Client B said: Thanos
+							ClientB -> At 'Wed Nov 25 19:24:49 EST 2015' Client A said: Zoom Zoom
+ClientA -> At 'Wed Nov 25 19:24:49 EST 2015' Client B said: Wehhh
+							ClientB -> At 'Wed Nov 25 19:24:49 EST 2015' Client A said: You got it working
+ClientA -> At 'Wed Nov 25 19:24:49 EST 2015' Client B said: Thanos
+							ClientB -> At 'Wed Nov 25 19:24:49 EST 2015' Client A said: Hey there
+							ClientB -> At 'Wed Nov 25 19:24:49 EST 2015' Client A said: Zoom Zoom
+ClientA -> At 'Wed Nov 25 19:24:49 EST 2015' Client B said: Oh no
+							ClientB -> At 'Wed Nov 25 19:24:49 EST 2015' Client A said: You got it working
+ClientA -> At 'Wed Nov 25 19:24:49 EST 2015' Client B said: Thanos
+							ClientB -> At 'Wed Nov 25 19:24:49 EST 2015' Client A said: Oh no
+ClientA -> At 'Wed Nov 25 19:24:49 EST 2015' Client B said: Blah!
+							ClientB -> At 'Wed Nov 25 19:24:49 EST 2015' Client A said: Meh
+ClientA -> At 'Wed Nov 25 19:24:49 EST 2015' Client B said: No Blah
+							ClientB -> At 'Wed Nov 25 19:24:49 EST 2015' Client A said: You got it working
+ClientA -> At 'Wed Nov 25 19:24:49 EST 2015' Client B said: How's it going, eh
+							ClientB -> At 'Wed Nov 25 19:24:49 EST 2015' Client A said: Meh
+ClientA -> At 'Wed Nov 25 19:24:49 EST 2015' Client B said: Glah
+							ClientB -> At 'Wed Nov 25 19:24:49 EST 2015' Client A said: Hey there
+ClientA -> At 'Wed Nov 25 19:24:49 EST 2015' Client B said: Meh
+							ClientB -> At 'Wed Nov 25 19:24:49 EST 2015' Client A said: Hey there
+ClientA -> At 'Wed Nov 25 19:24:49 EST 2015' Client B said: Meh
+							ClientB -> At 'Wed Nov 25 19:24:49 EST 2015' Client A said: Hey there
+ClientA -> At 'Wed Nov 25 19:24:49 EST 2015' Client B said: No Blah
+							ClientB -> At 'Wed Nov 25 19:24:49 EST 2015' Client A said: Zoom Zoom
+ClientA -> At 'Wed Nov 25 19:24:49 EST 2015' Client B said: How's it going, eh
+							ClientB -> At 'Wed Nov 25 19:24:49 EST 2015' Client A said: Zoom Zoom
+ClientA -> At 'Wed Nov 25 19:24:49 EST 2015' Client B said: Wehhh
+							ClientB -> At 'Wed Nov 25 19:24:49 EST 2015' Client A said: Meh
+ClientA -> At 'Wed Nov 25 19:24:49 EST 2015' Client B said: Glah
+							ClientB -> At 'Wed Nov 25 19:24:49 EST 2015' Client A said: Zoom Zoom
+ClientA -> At 'Wed Nov 25 19:24:49 EST 2015' Client B said: Blah!
+							ClientB -> At 'Wed Nov 25 19:24:49 EST 2015' Client A said: Weh Blah
+ClientA -> At 'Wed Nov 25 19:24:49 EST 2015' Client B said: Oh no
+							ClientB -> At 'Wed Nov 25 19:24:49 EST 2015' Client A said: How's it going, eh
+ClientA -> At 'Wed Nov 25 19:24:49 EST 2015' Client B said: Say hello
+							ClientB -> At 'Wed Nov 25 19:24:49 EST 2015' Client A said: You got it working
+ClientA -> At 'Wed Nov 25 19:24:49 EST 2015' Client B said: Meh
+							ClientB -> At 'Wed Nov 25 19:24:49 EST 2015' Client A said: Blah!
+ClientA -> At 'Wed Nov 25 19:24:49 EST 2015' Client B said: How's it going, eh
+							ClientB -> At 'Wed Nov 25 19:24:49 EST 2015' Client A said: Glah
+ClientA -> At 'Wed Nov 25 19:24:49 EST 2015' Client B said: Wehhh
+							ClientB -> At 'Wed Nov 25 19:24:49 EST 2015' Client A said: You got it working
+ClientA -> At 'Wed Nov 25 19:24:49 EST 2015' Client B said: No Glah
+							ClientB -> At 'Wed Nov 25 19:24:49 EST 2015' Client A said: Glah
+ClientA -> At 'Wed Nov 25 19:24:49 EST 2015' Client B said: Thanos
+							ClientB -> At 'Wed Nov 25 19:24:49 EST 2015' Client A said: Say hello
+							ClientB -> At 'Wed Nov 25 19:24:49 EST 2015' Client A said: How's it going, eh
+							ClientB -> At 'Wed Nov 25 19:24:49 EST 2015' Client A said: Glah
+							ClientB -> At 'Wed Nov 25 19:24:49 EST 2015' Client A said: Zoom Zoom
+
+
+***** Overly chatty conversation has stopped
