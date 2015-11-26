@@ -1,5 +1,5 @@
-CISC3150-HW8
-Chhater Application
+# CISC3150-HW8
+Chatter Application
 
 References
 
